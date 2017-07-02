@@ -28,6 +28,12 @@ app.use('/users', users);
 app.get('/api/:p0/:p1', (req, res) => {
     res.send(req.params.p0 + ' ' + req.params.p1)
 })
+app.get('/api/:p0/:p1/asnum', (req, res) => {
+    let p0 = parseFloat(req.params.p0)
+    let p1 = parseFloat(req.params.p1)
+    let r = p0 + p1
+    res.send(r.toString())
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
